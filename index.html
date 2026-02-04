@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eFootball™ 2026 - Atualizações Oficiais</title>
+    <style>
+        :root { --primary: #0044cc; --bg: #01041d; --card: #161b33; }
+        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: #fff; line-height: 1.6; }
+        header { background: #000; padding: 15px 5%; border-bottom: 2px solid var(--primary); }
+        .logo { font-size: 20px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 300px; gap: 30px; }
+        @media (max-width: 800px) { .container { grid-template-columns: 1fr; } }
+        .main-news { background: var(--card); padding: 30px; border-radius: 20px; }
+        .tag { background: #ff4d4d; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 10px; display: inline-block; }
+        /* 核心修复：确保按钮内部文字完美居中 */
+        .cta-box { text-align: center; margin-top: 30px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 15px; }
+        .btn { 
+            display: inline-flex; align-items: center; justify-content: center; min-height: 65px; width: 100%; max-width: 320px;
+            background: linear-gradient(135deg, #ff6b00, #ff8c00); color: #fff; text-decoration: none; 
+            border-radius: 14px; font-weight: bold; font-size: 20px; transition: 0.3s;
+        }
+        .btn:active { transform: scale(0.98); }
+        footer { background: #000; padding: 40px 5%; margin-top: 50px; font-size: 12px; color: #666; text-align: center; }
+    </style>
+</head>
+<body>
+
+<header><div class="logo">BALL NEWS</div></header>
+
+<div class="container">
+    <div class="main-news">
+        <span class="tag">EVENTO EXCLUSIVO</span>
+        <h1>Atualização de Campanha: Resgate Seus Bônus</h1>
+        <p>A nova temporada chegou. Clique abaixo para validar sua participação e receber recompensas imediatas em sua conta brasileira.</p>
+        
+        <div class="cta-box">
+            <a href="###SECURE_ACCESS_TOKEN###" id="mainAction" class="btn">ATIVAR BÔNUS AGORA</a>
+        </div>
+    </div>
+    <aside>
+        <div style="background:var(--card); padding:20px; border-radius:15px;">
+            <h4 style="margin:0;">Top News</h4>
+            <p style="font-size:13px; color:#888;">Live eFootball - 125k assistindo</p>
+        </div>
+    </aside>
+</div>
+
+<footer>
+    <p>&copy; 2026 Konami Digital Entertainment. <a href="#" style="color:#666;">Privacidade</a> | <a href="#" style="color:#666;">Termos</a></p>
+</footer>
+
+<script>
+    document.getElementById('mainAction').onclick = function(e) {
+        const target = this.getAttribute('href');
+        // 自愈逻辑：如果 100% 确认占位符没被替换，强跳官网保护域名
+        if (target.indexOf('###') !== -1) {
+            e.preventDefault();
+            window.location.replace("https://www.konami.com/efootball/pt-br/");
+            return;
+        }
+        this.innerHTML = "VERIFICANDO...";
+    };
+</script>
+
+</body>
+</html>
